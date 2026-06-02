@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soma Chakraborty — PM Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #1a1a18; --ink-muted: #6b6b65; --ink-faint: #a8a8a2;
+    --surface: #faf9f6; --surface-raised: #f2f0eb;
+    --accent: #c84b2f; --accent-light: #f5ede9;
+    --teal: #1a6b5a; --teal-light: #e6f2ef;
+    --border: rgba(26,26,24,0.1); --border-strong: rgba(26,26,24,0.2);
+    --serif: 'DM Serif Display', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); background: var(--surface); color: var(--ink); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+  nav { position: sticky; top: 0; z-index: 100; background: var(--surface); border-bottom: 1px solid var(--border); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; }
+  .nav-logo { font-family: var(--serif); font-size: 1.1rem; color: var(--ink); text-decoration: none; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { font-size: 0.85rem; color: var(--ink-muted); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--ink); }
+  .hero { max-width: 860px; margin: 0 auto; padding: 7rem 2rem 5rem; display: grid; gap: 1.5rem; }
+  .hero-eyebrow { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+  .hero h1 { font-family: var(--serif); font-size: clamp(2.8rem, 6vw, 4.2rem); line-height: 1.1; color: var(--ink); letter-spacing: -0.02em; }
+  .hero h1 em { font-style: italic; color: var(--ink-muted); }
+  .hero-desc { font-size: 1.05rem; color: var(--ink-muted); max-width: 600px; line-height: 1.75; }
+  .hero-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; padding-top: 0.5rem; }
+  .meta-item { font-size: 0.8rem; color: var(--ink-faint); display: flex; align-items: center; gap: 0.4rem; }
+  .divider { border: none; border-top: 1px solid var(--border); margin: 0 2rem; }
+  .section { max-width: 860px; margin: 0 auto; padding: 5rem 2rem; }
+  .section-label { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 3rem; display: block; }
+  .case-card { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 3rem; background: #fff; transition: box-shadow 0.25s; }
+  .case-card:hover { box-shadow: 0 4px 32px rgba(26,26,24,0.07); }
+  .case-card-header { padding: 2.5rem 2.5rem 2rem; border-bottom: 1px solid var(--border); display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: start; }
+  .case-tag { display: inline-block; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 10px; border-radius: 4px; margin-bottom: 0.75rem; }
+  .tag-appia { background: var(--teal-light); color: var(--teal); }
+  .tag-briefback { background: var(--accent-light); color: var(--accent); }
+  .tag-type { background: var(--surface-raised); color: var(--ink-muted); margin-left: 6px; }
+  .case-card-header h2 { font-family: var(--serif); font-size: 1.7rem; letter-spacing: -0.015em; line-height: 1.2; color: var(--ink); }
+  .case-card-header .subtitle { font-size: 0.9rem; color: var(--ink-muted); margin-top: 0.4rem; }
+  .case-badge { font-size: 0.75rem; color: var(--ink-faint); border: 1px solid var(--border); border-radius: 6px; padding: 4px 10px; white-space: nowrap; }
+  .metrics-row { display: grid; grid-template-columns: repeat(4, 1fr); border-bottom: 1px solid var(--border); }
+  .metric-cell { padding: 1.4rem 1.75rem; border-right: 1px solid var(--border); }
+  .metric-cell:last-child { border-right: none; }
+  .metric-num { font-family: var(--serif); font-size: 1.8rem; line-height: 1; color: var(--ink); display: block; margin-bottom: 0.3rem; }
+  .metric-label { font-size: 0.76rem; color: var(--ink-muted); line-height: 1.4; }
+  .case-body { padding: 2.5rem; }
+  .case-section { margin-bottom: 2rem; }
+  .case-section-title { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 0.6rem; }
+  .case-section p { font-size: 0.95rem; color: var(--ink-muted); line-height: 1.75; }
+  .accordion { border-top: 1px solid var(--border); margin-top: 2rem; }
+  .acc-item { border-bottom: 1px solid var(--border); }
+  .acc-trigger { width: 100%; background: none; border: none; cursor: pointer; padding: 1.1rem 0; display: flex; justify-content: space-between; align-items: center; font-family: var(--sans); font-size: 0.9rem; font-weight: 500; color: var(--ink); text-align: left; transition: color 0.2s; }
+  .acc-trigger:hover { color: var(--accent); }
+  .acc-icon { width: 20px; height: 20px; border: 1px solid var(--border-strong); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: transform 0.25s; font-size: 0.85rem; color: var(--ink-muted); }
+  .acc-item.open .acc-icon { transform: rotate(45deg); }
+  .acc-content { display: none; padding-bottom: 1.5rem; font-size: 0.92rem; color: var(--ink-muted); line-height: 1.75; }
+  .acc-item.open .acc-content { display: block; }
+  .styled-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin-top: 0.75rem; }
+  .styled-table th { text-align: left; padding: 0.6rem 0.75rem; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); border-bottom: 1px solid var(--border); }
+  .styled-table td { padding: 0.75rem; color: var(--ink-muted); border-bottom: 1px solid var(--border); vertical-align: top; }
+  .styled-table tr:last-child td { border-bottom: none; }
+  .td-before { color: var(--accent); font-size: 0.82rem; }
+  .td-after { color: var(--teal); font-size: 0.82rem; }
+  .highlight-block { background: var(--surface-raised); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; padding: 1rem 1.25rem; font-size: 0.88rem; color: var(--ink-muted); line-height: 1.65; margin: 0.75rem 0; }
+  .highlight-block.teal { border-left-color: var(--teal); }
+  .moscow-grid { display: grid; gap: 0; margin-top: 0.75rem; }
+  .moscow-item { display: flex; gap: 0.75rem; align-items: baseline; font-size: 0.88rem; color: var(--ink-muted); padding: 0.6rem 0; border-bottom: 1px solid var(--border); }
+  .moscow-item:last-child { border-bottom: none; }
+  .moscow-pill { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 2px 8px; border-radius: 3px; flex-shrink: 0; min-width: 28px; text-align: center; }
+  .pill-m { background: #1a6b5a1a; color: var(--teal); }
+  .pill-s { background: #c84b2f15; color: var(--accent); }
+  .pill-c { background: #6b6b651a; color: var(--ink-muted); }
+  .pill-w { background: #a8a8a21a; color: var(--ink-faint); }
+  .moscow-reason { font-size: 0.8rem; color: var(--ink-faint); margin-top: 2px; }
+  .persona-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.75rem; }
+  .persona-card { border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; }
+  .persona-name { font-weight: 500; font-size: 0.9rem; color: var(--ink); margin-bottom: 0.25rem; }
+  .persona-role { font-size: 0.78rem; color: var(--ink-faint); margin-bottom: 0.75rem; }
+  .persona-row { font-size: 0.82rem; color: var(--ink-muted); padding: 0.3rem 0; border-bottom: 1px solid var(--border); }
+  .persona-row:last-child { border-bottom: none; }
+  .persona-row span { color: var(--ink-faint); font-size: 0.75rem; display: block; }
+  .about-section { background: var(--ink); color: #faf9f6; padding: 5rem 2rem; }
+  .about-inner { max-width: 860px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  .about-inner h2 { font-family: var(--serif); font-size: 2.2rem; color: #faf9f6; line-height: 1.2; letter-spacing: -0.015em; }
+  .about-inner p { font-size: 0.92rem; color: rgba(250,249,246,0.65); line-height: 1.8; margin-top: 1rem; }
+  .about-details { display: grid; gap: 1.25rem; margin-top: 1rem; }
+  .about-detail-item { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem; }
+  .about-detail-label { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(250,249,246,0.35); margin-bottom: 0.25rem; }
+  .about-detail-value { font-size: 0.9rem; color: rgba(250,249,246,0.8); }
+  footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center; font-size: 0.8rem; color: var(--ink-faint); }
+  footer a { color: var(--ink-muted); text-decoration: none; }
+  @media (max-width: 640px) {
+    .hero { padding: 4rem 1.25rem 3rem; }
+    .section { padding: 3.5rem 1.25rem; }
+    .case-card-header { padding: 1.5rem; grid-template-columns: 1fr; }
+    .case-body { padding: 1.5rem; }
+    .metrics-row { grid-template-columns: 1fr 1fr; }
+    .metric-cell { border-right: none; border-bottom: 1px solid var(--border); }
+    .persona-grid { grid-template-columns: 1fr; }
+    .about-inner { grid-template-columns: 1fr; gap: 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">Soma Chakraborty</a>
+  <ul class="nav-links">
+    <li><a href="#work">Work</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="mailto:somachakraborty.career@gmail.com">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <span class="hero-eyebrow">PM Portfolio &nbsp;·&nbsp; 2026</span>
+  <h1>Product thinking<br>from the <em>inside out.</em></h1>
+  <p class="hero-desc">Five years building, automating, and shipping in enterprise FinTech. Now applying that lens to product management — through real problems, real decisions, and documented work.</p>
+  <div class="hero-meta">
+    <span class="meta-item">📍 Hyderabad, India</span>
+    <span class="meta-item">🏢 SS&C Technologies &nbsp;·&nbsp; 5+ yrs</span>
+    <span class="meta-item">🔗 <a href="https://linkedin.com/in/soma-chakraborty-110130177" target="_blank" style="color:inherit;">LinkedIn</a></span>
+  </div>
+</div>
+
+<hr class="divider">
+
+<div class="section" id="work">
+  <span class="section-label">Selected Work</span>
+
+  <!-- CASE STUDY 1 -->
+  <div class="case-card" id="appia">
+    <div class="case-card-header">
+      <div>
+        <div>
+          <span class="case-tag tag-appia">Case Study 1</span>
+          <span class="case-tag tag-type">Process Automation · FinTech</span>
+        </div>
+        <h2>APPIA Key Provisioning<br>Automation</h2>
+        <p class="subtitle">Blue Prism RPA &nbsp;·&nbsp; SS&C Technologies &nbsp;·&nbsp; Internal Platform</p>
+      </div>
+      <span class="case-badge">~6 months &nbsp;·&nbsp; 2023–24</span>
+    </div>
+
+    <div class="metrics-row">
+      <div class="metric-cell">
+        <span class="metric-num">2–3 hrs</span>
+        <span class="metric-label">→ under 5 min per request</span>
+      </div>
+      <div class="metric-cell">
+        <span class="metric-num">90%</span>
+        <span class="metric-label">reduction in D-station dependency</span>
+      </div>
+      <div class="metric-cell">
+        <span class="metric-num">95%</span>
+        <span class="metric-label">form submission accuracy</span>
+      </div>
+      <div class="metric-cell">
+        <span class="metric-num">Same-day</span>
+        <span class="metric-label">processing for all 10–15 weekly requests</span>
+      </div>
+    </div>
+
+    <div class="case-body">
+      <div class="case-section">
+        <div class="case-section-title">Problem</div>
+        <p>The APPIA key provisioning process at SS&C was entirely manual. Project Managers sent unstructured emails. The D-station team — reduced from 10 members to 4 — spent 2–3 hours per request manually fetching client data from Salesforce, filling forms by hand, and emailing a third-party provider. With 10–15 requests arriving weekly, this created recurring bottlenecks, frequent errors, and consistent burnout across all four stakeholder groups.</p>
+      </div>
+      <div class="case-section">
+        <div class="case-section-title">My Role</div>
+        <p>I identified this process on SS&C's internal Bright Ideas automation board, initiated discovery across four stakeholder groups, led solution definition, drove cross-functional delivery with the RPA development team, and managed post-launch adoption issues — including establishing escalation protocols and enforcing input standards with Project Managers.</p>
+      </div>
+
+      <div class="accordion">
+
+        <div class="acc-item">
+          <button class="acc-trigger" onclick="toggle(this)">
+            Discovery — how the problem was confirmed
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-content">
+            <p>Discovery involved structured conversations with four stakeholder groups: the D-station team manager, D-station members, Project Managers, and a subset of clients who had experienced provisioning delays.</p>
+            <p style="margin-top:0.75rem;">Evidence gathered: emails showing PM and client frustration, direct burnout accounts from D-station members, observable two-week turnaround data, and error patterns flagged by the third-party provider. The evidence was consistent across all groups — making the problem impossible to dismiss as isolated.</p>
+            <div class="highlight-block teal" style="margin-top:1rem;">
+              The root trigger was not the process itself changing. It was the same broken process meeting a team with a quarter of its original capacity.
+            </div>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-trigger" onclick="toggle(this)">
+            Solution — what was built and why
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-content">
+            <p>Blue Prism RPA was selected after a cross-functional alignment call. The process was repetitive, rule-based, and stable — a textbook automation candidate. The key product decision was standardising the input format. Blue Prism cannot interpret free-form emails, so a tabular email template was designed and introduced for all Project Managers.</p>
+            <p style="margin-top:0.75rem; font-weight:500; font-size:0.85rem; color:var(--ink);">Bot workflow end to end:</p>
+            <ul style="margin-top:0.5rem; padding-left:1.25rem; color:var(--ink-muted); font-size:0.88rem; line-height:2.2;">
+              <li>PM sends standardised email to Blue Prism user ID</li>
+              <li>Bot reads structured data, opens Salesforce, fetches all required client fields</li>
+              <li>Bot fills APPIA key request form automatically</li>
+              <li>Bot emails third-party provider with form attached — requestor CC'd directly</li>
+              <li>Requestor receives the key without D-station acting as a relay</li>
+            </ul>
+            <div class="highlight-block" style="margin-top:1rem;">
+              Agreed trade-off: if a PM submitted an incorrectly formatted email, the bot would fail on that request. PMs were required to correct and resend — not D-station. This was explicit and documented upfront.
+            </div>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-trigger" onclick="toggle(this)">
+            Impact — before and after by stakeholder
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-content">
+            <table class="styled-table">
+              <thead>
+                <tr><th>Stakeholder</th><th>Before</th><th>After</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Project Manager</strong></td>
+                  <td class="td-before">Unstructured individual emails every time</td>
+                  <td class="td-after">Standard template sent to Blue Prism ID</td>
+                </tr>
+                <tr>
+                  <td><strong>D-station team</strong></td>
+                  <td class="td-before">Owned every step of every request; 2–3 hrs each</td>
+                  <td class="td-after">Exception handling only — ~10% of cases</td>
+                </tr>
+                <tr>
+                  <td><strong>Third-party provider</strong></td>
+                  <td class="td-before">Inconsistent, error-prone forms; correction loops</td>
+                  <td class="td-after">Consistent, accurate forms every time</td>
+                </tr>
+                <tr>
+                  <td><strong>Client / Requestor</strong></td>
+                  <td class="td-before">Waited ~2 weeks; received key via D-station relay</td>
+                  <td class="td-after">CC'd directly on third-party email; no delay</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-trigger" onclick="toggle(this)">
+            Post-launch — what I had to fix after go-live
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-content">
+            <p><strong>Issue 1 — Broken escalation protocol:</strong> D-station was escalating bot failures directly to engineering without first diagnosing the cause. Engineers were spending time on what were actually simple input errors. I established a clear protocol: verify email format and client details before reaching engineering. This alone significantly reduced unnecessary escalations.</p>
+            <p style="margin-top:0.75rem;"><strong>Issue 2 — PMs reverting to old behaviour:</strong> Some PMs continued sending unstructured emails post-launch. D-station began correcting these quietly to avoid friction — absorbing work that was not theirs. I stopped this. PMs were required to correct and resend their own emails. A deliberate decision to reinforce the standard and prevent D-station from regressing to the old pattern.</p>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-trigger" onclick="toggle(this)">
+            Learnings — what I would do differently
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-content">
+            <p>The biggest gap was communication breadth. Leadership-level alignment was strong — but the message did not reach all Project Managers uniformly. Some received the new template with full context. Others got a diluted version through indirect channels. The result was predictable: incorrect email formats continued post-launch.</p>
+            <p style="margin-top:0.75rem;">If I ran this again: after leadership alignment, one all-hands session with every participant — not just senior members. One message, one room, one moment of shared understanding. Automation projects fail at the edges, and the edges are usually the people who were not in the original room.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- CASE STUDY 2 -->
+  <div class="case-card" id="briefback">
+    <div class="case-card-header">
+      <div>
+        <div>
+          <span class="case-tag tag-briefback">Case Study 2</span>
+          <span class="case-tag tag-type">Zero-to-One Product · AI</span>
+        </div>
+        <h2>BriefBack — AI-Powered<br>Meeting Intelligence</h2>
+        <p class="subtitle">Full PRD &nbsp;·&nbsp; Personal Product Work &nbsp;·&nbsp; May 2026</p>
+      </div>
+      <span class="case-badge">PRD v1.0 &nbsp;·&nbsp; MVP</span>
+    </div>
+
+    <div class="metrics-row">
+      <div class="metric-cell">
+        <span class="metric-num">2–3 hrs</span>
+        <span class="metric-label">→ under 10 min pre-meeting prep</span>
+      </div>
+      <div class="metric-cell">
+        <span class="metric-num">65%</span>
+        <span class="metric-label">briefing open rate target by month 6</span>
+      </div>
+      <div class="metric-cell">
+        <span class="metric-num">70%</span>
+        <span class="metric-label">retention at 6 months (weekly active)</span>
+      </div>
+      <div class="metric-cell">
+        <span class="metric-num">5</span>
+        <span class="metric-label">Must-have features scoped for MVP</span>
+      </div>
+    </div>
+
+    <div class="case-body">
+      <div class="case-section">
+        <div class="case-section-title">Problem</div>
+        <p>Product Managers at mid-size, high-growth tech companies attend multiple recurring stakeholder meetings daily. Without a reliable system to track what was decided, left open, and promised in each relationship, PMs walk in without context. Conversations repeat. Commitments are missed. Stakeholder trust erodes. Current tools require manual input, are reactive, or are locked to a single enterprise stack. No tool today silently builds a living memory of PM stakeholder relationships and surfaces context automatically — before the meeting begins.</p>
+      </div>
+      <div class="case-section">
+        <div class="case-section-title">My Role</div>
+        <p>Full product ownership — from problem framing and competitive analysis through persona definition, success metrics, user story writing, MoSCoW prioritisation, and risk documentation. This is original zero-to-one product work built as part of my PM transition portfolio. No existing product to inherit — problem first, solution second.</p>
+      </div>
+
+      <div class="accordion">
+
+        <div class="acc-item">
+          <button class="acc-trigger" onclick="toggle(this)">
+            User personas — who this is built for
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-content">
+            <div class="persona-grid">
+              <div class="persona-card">
+                <div class="persona-name">Priya — Primary User</div>
+                <div class="persona-role">Product Manager · 3–6 yrs · Mid-size tech (50–500 employees)</div>
+                <div class="persona-row">
+                  <span>Core pain</span>
+                  Spends 2–3 hrs the night before each stakeholder sync piecing together what was decided. Still walks in with gaps.
+                </div>
+                <div class="persona-row">
+                  <span>Stack</span>
+                  Zoom, Slack, Gmail, Google Calendar — no enterprise AI coverage
+                </div>
+                <div class="persona-row">
+                  <span>Adoption barrier</span>
+                  Company IT policy may restrict third-party tools accessing calendar, email, and meeting recordings
+                </div>
+              </div>
+              <div class="persona-card">
+                <div class="persona-name">Arjun — Enterprise Buyer</div>
+                <div class="persona-role">VP of Product · 10+ yrs · Approver, not daily user</div>
+                <div class="persona-row">
+                  <span>Role in purchase</span>
+                  Does not use BriefBack daily. Approves it. Decides whether it goes on the IT-approved tools list.
+                </div>
+                <div class="persona-row">
+                  <span>Key question</span>
+                  Can I trust this with my team's calendar and email data?
+                </div>
+                <div class="persona-row">
+                  <span>GTM model</span>
+                  Bottom-up. Priya loves it, advocates for it. Arjun buys what Priya brings to him.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-trigger" onclick="toggle(this)">
+            User story and acceptance criteria
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-content">
+            <div class="highlight-block teal">
+              <strong>User Story:</strong> As a Product Manager, I want to receive a proactive briefing 10 minutes before a recurring stakeholder meeting, so that I can walk in prepared without spending time on manual prep.
+            </div>
+            <p style="margin-top:1.25rem; font-size:0.78rem; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-faint);">Acceptance Criteria</p>
+            <div style="display:grid; gap:0.6rem; margin-top:0.6rem;">
+              <div class="highlight-block" style="border-left-color:var(--border-strong); margin:0;">
+                <strong>AC1 — Trigger:</strong> Given a recurring stakeholder meeting exists, when it is 10 minutes prior, then the product triggers and delivers an alert to the PM.
+              </div>
+              <div class="highlight-block" style="border-left-color:var(--border-strong); margin:0;">
+                <strong>AC2 — Content:</strong> Given an alert has been raised, when the briefing is generated, then it must contain the previous meeting summary, open action items, commitments made, and relationship tone — specific to that meeting.
+              </div>
+              <div class="highlight-block" style="border-left-color:var(--border-strong); margin:0;">
+                <strong>AC3 — Load state:</strong> Given the alert has been delivered and when the tool is clicked, then the briefing is ready and displays the full content accurately.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-trigger" onclick="toggle(this)">
+            Feature prioritisation — MoSCoW
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-content">
+            <div class="moscow-grid">
+              <div class="moscow-item"><span class="moscow-pill pill-m">M</span><div>Silent meeting participation<div class="moscow-reason">Primary data source — MVP cannot function without it</div></div></div>
+              <div class="moscow-item"><span class="moscow-pill pill-m">M</span><div>Email and Slack monitoring<div class="moscow-reason">Secondary data source — commitments outside meetings must be captured</div></div></div>
+              <div class="moscow-item"><span class="moscow-pill pill-m">M</span><div>Pre-meeting briefing alert<div class="moscow-reason">Core delivery mechanism — the reason BriefBack exists</div></div></div>
+              <div class="moscow-item"><span class="moscow-pill pill-m">M</span><div>Briefing content (summary, actions, commitments)<div class="moscow-reason">The actual value the PM receives — without this there is no MVP</div></div></div>
+              <div class="moscow-item"><span class="moscow-pill pill-m">M</span><div>Data privacy controls<div class="moscow-reason">Primary adoption blocker — Priya cannot trust the product without this</div></div></div>
+              <div class="moscow-item"><span class="moscow-pill pill-s">S</span><div>Relationship tone and sentiment tracking<div class="moscow-reason">Adds depth to briefing — core value works without it in v1</div></div></div>
+              <div class="moscow-item"><span class="moscow-pill pill-s">S</span><div>On-demand briefing<div class="moscow-reason">Proactive alert must prove itself first before building reactive access</div></div></div>
+              <div class="moscow-item"><span class="moscow-pill pill-c">C</span><div>Mobile app<div class="moscow-reason">Dependent on desktop adoption success</div></div></div>
+              <div class="moscow-item"><span class="moscow-pill pill-w">W</span><div>Enterprise admin dashboard<div class="moscow-reason">Out of scope — enterprise GTM follows individual adoption</div></div></div>
+              <div class="moscow-item"><span class="moscow-pill pill-w">W</span><div>Microsoft 365 integration<div class="moscow-reason">Primary user on Zoom / Slack / Gmail stack only at MVP</div></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-trigger" onclick="toggle(this)">
+            Risks and open questions
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-content">
+            <p style="font-size:0.78rem; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:0.75rem;">Key Risks</p>
+            <div class="highlight-block" style="margin-bottom:0.6rem;">
+              <strong>R1 — Data Privacy and Security:</strong> BriefBack accesses meeting recordings, emails, and calendar data. A breach would damage trust, create legal liability, and likely end the product. Mitigation: end-to-end encryption, clear data retention policies, and user-controlled deletion must ship at MVP.
+            </div>
+            <div class="highlight-block">
+              <strong>R2 — Enterprise IT Approval:</strong> Individual PMs may want BriefBack but IT policies may block third-party tools accessing email and calendar data. Mitigation: build data privacy controls into MVP and prepare enterprise security documentation early in the GTM process.
+            </div>
+            <p style="font-size:0.78rem; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-faint); margin:1.25rem 0 0.75rem;">Open Questions</p>
+            <ul style="padding-left:1.25rem; color:var(--ink-muted); font-size:0.88rem; line-height:2.2;">
+              <li>What AI model and data pipeline architecture is required to accurately extract commitments and relationship tone from unstructured meeting data?</li>
+              <li>Will BriefBack's differentiation on proactive relationship intelligence sustain adoption against Copilot, Otter.ai, and Google Workspace AI?</li>
+              <li>Do Zoom, Slack, Gmail, and Google Calendar API policies permit the level of data access BriefBack requires at scale?</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="about-section" id="about">
+  <div class="about-inner">
+    <div>
+      <h2>Five years of delivery.<br>Now building product.</h2>
+      <p>I spent five years inside enterprise FinTech platforms — writing requirements, shipping automation, building dashboards, and managing stakeholder relationships across QA, BA, and implementation roles. Now I am applying that inside knowledge to product management.</p>
+      <p>Every case study here represents real work, real decisions, and real trade-offs — not exercises.</p>
+    </div>
+    <div class="about-details">
+      <div class="about-detail-item">
+        <div class="about-detail-label">Current role</div>
+        <div class="about-detail-value">QA Engineer · Product Ownership &amp; Delivery — SS&C Technologies</div>
+      </div>
+      <div class="about-detail-item">
+        <div class="about-detail-label">Domain experience</div>
+        <div class="about-detail-value">FinTech · Capital Markets · B2B SaaS · Enterprise Platforms</div>
+      </div>
+      <div class="about-detail-item">
+        <div class="about-detail-label">Tools</div>
+        <div class="about-detail-value">Jira · Confluence · Salesforce · Power BI · Snowflake · SQL · Blue Prism</div>
+      </div>
+      <div class="about-detail-item">
+        <div class="about-detail-label">Contact</div>
+        <div class="about-detail-value"><a href="mailto:somachakraborty.career@gmail.com" style="color:rgba(250,249,246,0.65);">somachakraborty.career@gmail.com</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>Soma Chakraborty &nbsp;·&nbsp; PM Portfolio 2026 &nbsp;·&nbsp; <a href="mailto:somachakraborty.career@gmail.com">somachakraborty.career@gmail.com</a></p>
+</footer>
+
+<script>
+function toggle(btn) {
+  const item = btn.closest('.acc-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.acc-item.open').forEach(el => el.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+</script>
+</body>
+</html>
