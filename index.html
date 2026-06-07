@@ -86,6 +86,33 @@
   .persona-row { font-size: 0.82rem; color: var(--ink-muted); padding: 0.3rem 0; border-bottom: 1px solid var(--border); }
   .persona-row:last-child { border-bottom: none; }
   .persona-row span { color: var(--ink-faint); font-size: 0.75rem; display: block; }
+
+  /* ── Roadmap styles ── */
+  .roadmap-wrapper { margin-top: 1rem; }
+  .roadmap-intro { font-size: 0.85rem; color: var(--ink-muted); line-height: 1.7; margin-bottom: 1.5rem; }
+  .roadmap-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+  .roadmap-col { background: #fff; display: flex; flex-direction: column; }
+  .roadmap-col-header { padding: 1.1rem 1.25rem 1rem; background: #1a1a18; }
+  .roadmap-col-header .horizon { font-size: 0.65rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(250,249,246,0.45); margin-bottom: 0.2rem; }
+  .roadmap-col-header .theme { font-family: var(--serif); font-size: 1.05rem; color: #faf9f6; line-height: 1.2; }
+  .roadmap-col-header .timing { font-size: 0.72rem; color: rgba(250,249,246,0.35); margin-top: 0.3rem; }
+  .roadmap-col-header.now .theme { color: #7ecbb8; }
+  .roadmap-col-header.next .theme { color: #f0b97a; }
+  .roadmap-col-header.later .theme { color: #a8c8f0; }
+  .roadmap-section-label { font-size: 0.66rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); padding: 0.75rem 1.25rem 0.4rem; background: var(--surface-raised); border-bottom: 1px solid var(--border); }
+  .roadmap-features { padding: 0.75rem 1.25rem 1rem; border-bottom: 1px solid var(--border); flex: 1; }
+  .roadmap-feature { font-size: 0.82rem; color: var(--ink-muted); padding: 0.35rem 0; display: flex; gap: 0.5rem; align-items: baseline; line-height: 1.45; }
+  .roadmap-feature::before { content: "—"; color: var(--ink-faint); font-size: 0.7rem; flex-shrink: 0; }
+  .roadmap-outcome { padding: 0.9rem 1.25rem; background: #fdf9f5; border-bottom: 1px solid var(--border); }
+  .roadmap-outcome-label { font-size: 0.63rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 0.4rem; }
+  .roadmap-outcome p { font-size: 0.8rem; color: var(--ink-muted); line-height: 1.6; font-style: italic; }
+  .roadmap-why { padding: 0.9rem 1.25rem 1.1rem; }
+  .roadmap-why-label { font-size: 0.63rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 0.4rem; }
+  .roadmap-why p { font-size: 0.79rem; color: var(--ink-faint); line-height: 1.6; }
+  .roadmap-oos { margin-top: 1rem; padding: 0.9rem 1.1rem; background: var(--surface-raised); border-radius: 8px; border: 1px solid var(--border); }
+  .roadmap-oos-label { font-size: 0.66rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 0.35rem; }
+  .roadmap-oos p { font-size: 0.8rem; color: var(--ink-faint); line-height: 1.6; }
+
   .about-section { background: var(--ink); color: #faf9f6; padding: 5rem 2rem; }
   .about-inner { max-width: 860px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
   .about-inner h2 { font-family: var(--serif); font-size: 2.2rem; color: #faf9f6; line-height: 1.2; letter-spacing: -0.015em; }
@@ -105,6 +132,7 @@
     .metric-cell { border-right: none; border-bottom: 1px solid var(--border); }
     .persona-grid { grid-template-columns: 1fr; }
     .about-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .roadmap-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -136,11 +164,341 @@
   <span class="section-label">Selected Work</span>
 
   <!-- CASE STUDY 1 -->
+  <div class="case-card" id="briefback">
+    <div class="case-card-header">
+      <div>
+        <div>
+          <span class="case-tag tag-briefback">Case Study 1</span>
+          <span class="case-tag tag-type">Zero-to-One Product · AI</span>
+        </div>
+        <h2>BriefBack — AI-Powered<br>Meeting Intelligence</h2>
+        <p class="subtitle">Full PRD &nbsp;·&nbsp; Personal Product Work &nbsp;·&nbsp; May 2026</p>
+      </div>
+      <span class="case-badge">PRD v1.1 &nbsp;·&nbsp; MVP</span>
+    </div>
+
+    <div class="metrics-row">
+      <div class="metric-cell">
+        <span class="metric-num">2–3 hrs</span>
+        <span class="metric-label">→ under 10 min pre-meeting prep</span>
+      </div>
+      <div class="metric-cell">
+        <span class="metric-num">65%</span>
+        <span class="metric-label">briefing open rate target by month 6</span>
+      </div>
+      <div class="metric-cell">
+        <span class="metric-num">70%</span>
+        <span class="metric-label">retention at 6 months (weekly active)</span>
+      </div>
+      <div class="metric-cell">
+        <span class="metric-num">5</span>
+        <span class="metric-label">Must-have features scoped for MVP</span>
+      </div>
+    </div>
+
+    <div class="case-body">
+      <div class="case-section">
+        <div class="case-section-title">Problem</div>
+        <p>Product Managers at mid-size, high-growth tech companies attend multiple recurring stakeholder meetings daily. Without a reliable system to track what was decided, left open, and promised in each relationship, PMs walk in without context. Conversations repeat. Commitments are missed. Stakeholder trust erodes. Current tools require manual input, are reactive, or are locked to a single enterprise stack. No tool today silently builds a living memory of PM stakeholder relationships and surfaces context automatically — before the meeting begins.</p>
+      </div>
+      <div class="case-section">
+        <div class="case-section-title">My Role</div>
+        <p>Full product ownership — from problem framing and competitive analysis through persona definition, success metrics, user story writing, MoSCoW prioritisation, and risk documentation. This is original zero-to-one product work built as part of my PM transition portfolio. No existing product to inherit — problem first, solution second.</p>
+      </div>
+
+      <div class="accordion">
+
+        <div class="acc-item">
+          <button class="acc-trigger" onclick="toggle(this)">
+            User personas — who this is built for
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-content">
+            <div class="persona-grid">
+              <div class="persona-card">
+                <div class="persona-name">Priya — Primary User</div>
+                <div class="persona-role">Product Manager · 3–6 yrs · Mid-size tech (50–500 employees)</div>
+                <div class="persona-row">
+                  <span>Core pain</span>
+                  Spends 2–3 hrs the night before each stakeholder sync piecing together what was decided. Still walks in with gaps.
+                </div>
+                <div class="persona-row">
+                  <span>Stack</span>
+                  Zoom, Slack, Gmail, Google Calendar — no enterprise AI coverage
+                </div>
+                <div class="persona-row">
+                  <span>Adoption barrier</span>
+                  Company IT policy may restrict third-party tools accessing calendar, email, and meeting recordings
+                </div>
+              </div>
+              <div class="persona-card">
+                <div class="persona-name">Arjun — Enterprise Buyer</div>
+                <div class="persona-role">VP of Product · 10+ yrs · Approver, not daily user</div>
+                <div class="persona-row">
+                  <span>Role in purchase</span>
+                  Does not use BriefBack daily. Approves it. Decides whether it goes on the IT-approved tools list.
+                </div>
+                <div class="persona-row">
+                  <span>Key question</span>
+                  Can I trust this with my team's calendar and email data?
+                </div>
+                <div class="persona-row">
+                  <span>GTM model</span>
+                  Bottom-up. Priya loves it, advocates for it. Arjun buys what Priya brings to him.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-trigger" onclick="toggle(this)">
+            Use cases and acceptance criteria
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-content">
+
+            <p style="font-size:0.78rem; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:0.75rem;">Use Case 1 — Pre-Meeting Briefing Alert</p>
+            <div class="highlight-block teal">
+              <strong>User Story:</strong> As a Product Manager, I want to receive a proactive briefing 10 minutes before a recurring stakeholder meeting, so that I can walk in prepared without spending time on manual prep.
+            </div>
+            <div style="display:grid; gap:0.6rem; margin-top:0.75rem;">
+              <div class="highlight-block" style="border-left-color:var(--border-strong); margin:0;">
+                <strong>AC1 — Trigger:</strong> Given a recurring stakeholder meeting exists, when it is 10 minutes prior, then the product triggers and delivers an alert to the PM.
+              </div>
+              <div class="highlight-block" style="border-left-color:var(--border-strong); margin:0;">
+                <strong>AC2 — Content:</strong> Given an alert has been raised, when the briefing is generated, then it must contain the previous meeting summary, open action items, commitments made, and relationship tone — specific to that meeting.
+              </div>
+              <div class="highlight-block" style="border-left-color:var(--border-strong); margin:0;">
+                <strong>AC3 — Load state:</strong> Given the alert has been delivered and when the tool is clicked, then the briefing is ready and displays the full content accurately.
+              </div>
+            </div>
+
+            <p style="font-size:0.78rem; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-faint); margin:1.5rem 0 0.75rem;">Use Case 2 — Data Privacy and User Control</p>
+            <div class="highlight-block teal">
+              <strong>User Story:</strong> As a Product Manager, I want to be able to view what data BriefBack is storing of my meeting recordings, emails, or Slack messages so that I can check for anything highly confidential and delete it.
+            </div>
+            <div style="display:grid; gap:0.6rem; margin-top:0.75rem;">
+              <div class="highlight-block" style="border-left-color:var(--border-strong); margin:0;">
+                <strong>AC1 — Data view:</strong> Given Priya is logged into BriefBack, when she navigates to the data storage view, then the system displays all stored data including meeting summaries, email threads, and Slack messages associated with her account.
+              </div>
+              <div class="highlight-block" style="border-left-color:var(--border-strong); margin:0;">
+                <strong>AC2 — Deletion:</strong> Given the data view is available, when Priya selects a specific piece of stored data to delete, then the system permanently deletes the selected data and displays a confirmation message.
+              </div>
+              <div class="highlight-block" style="border-left-color:var(--border-strong); margin:0;">
+                <strong>AC3 — Confirmation timing:</strong> Given Priya has deleted a piece of data, when deletion is completed, then the system confirms permanent deletion within five seconds.
+              </div>
+            </div>
+
+            <p style="font-size:0.78rem; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-faint); margin:1.5rem 0 0.75rem;">Use Case 3 — Silent Meeting Participation</p>
+            <div class="highlight-block teal">
+              <strong>User Story:</strong> As a Product Manager, I want the bot to join the meeting alongside me so that it silently summarises the conversation and keeps it ready for the next recurring meeting with the same stakeholder.
+            </div>
+            <div style="display:grid; gap:0.6rem; margin-top:0.75rem;">
+              <div class="highlight-block" style="border-left-color:var(--border-strong); margin:0;">
+                <strong>AC1 — Join:</strong> Given the bot has calendar access, when a meeting is scheduled, then the bot silently joins the meeting alongside the user 95% of the time.
+              </div>
+              <div class="highlight-block" style="border-left-color:var(--border-strong); margin:0;">
+                <strong>AC2 — Recording:</strong> Given the bot is present in the meeting, when the meeting is ongoing, then the bot silently records and processes the conversation accurately.
+              </div>
+              <div class="highlight-block" style="border-left-color:var(--border-strong); margin:0;">
+                <strong>AC3 — Briefing delivery:</strong> Given the bot has stored the meeting conversation, when the meeting ends, then the bot summarises the discussion within five minutes and delivers a complete briefing — including Slack messages and email context — ten minutes before the next recurring stakeholder meeting.
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-trigger" onclick="toggle(this)">
+            Feature prioritisation — MoSCoW
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-content">
+            <div class="moscow-grid">
+              <div class="moscow-item"><span class="moscow-pill pill-m">M</span><div>Silent meeting participation<div class="moscow-reason">Primary data source — MVP cannot function without it</div></div></div>
+              <div class="moscow-item"><span class="moscow-pill pill-m">M</span><div>Email and Slack monitoring<div class="moscow-reason">Secondary data source — commitments outside meetings must be captured</div></div></div>
+              <div class="moscow-item"><span class="moscow-pill pill-m">M</span><div>Pre-meeting briefing alert<div class="moscow-reason">Core delivery mechanism — the reason BriefBack exists</div></div></div>
+              <div class="moscow-item"><span class="moscow-pill pill-m">M</span><div>Briefing content (summary, actions, commitments)<div class="moscow-reason">The actual value the PM receives — without this there is no MVP</div></div></div>
+              <div class="moscow-item"><span class="moscow-pill pill-m">M</span><div>Data privacy controls<div class="moscow-reason">Primary adoption blocker — Priya cannot trust the product without this</div></div></div>
+              <div class="moscow-item"><span class="moscow-pill pill-s">S</span><div>Relationship tone and sentiment tracking<div class="moscow-reason">Adds depth to briefing — core value works without it in v1</div></div></div>
+              <div class="moscow-item"><span class="moscow-pill pill-s">S</span><div>On-demand briefing<div class="moscow-reason">Proactive alert must prove itself first before building reactive access</div></div></div>
+              <div class="moscow-item"><span class="moscow-pill pill-c">C</span><div>Mobile app<div class="moscow-reason">Dependent on desktop adoption success</div></div></div>
+              <div class="moscow-item"><span class="moscow-pill pill-w">W</span><div>Enterprise admin dashboard<div class="moscow-reason">Out of scope — enterprise GTM follows individual adoption</div></div></div>
+              <div class="moscow-item"><span class="moscow-pill pill-w">W</span><div>Microsoft 365 integration<div class="moscow-reason">Primary user on Zoom / Slack / Gmail stack only at MVP</div></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ROADMAP ACCORDION -->
+        <div class="acc-item">
+          <button class="acc-trigger" onclick="toggle(this)">
+            Product roadmap — Now / Next / Later
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-content">
+            <div class="roadmap-wrapper">
+              <p class="roadmap-intro">Three outcome-oriented horizons. Each column represents the problem being solved for Priya — not a delivery schedule. Commitments are made for Now; intentions are stated for Next and Later.</p>
+              <div class="roadmap-grid">
+
+                <!-- NOW -->
+                <div class="roadmap-col">
+                  <div class="roadmap-col-header now">
+                    <div class="horizon">Now &nbsp;·&nbsp; MVP Build</div>
+                    <div class="theme">Meeting Recap</div>
+                    <div class="timing">Active development</div>
+                  </div>
+                  <div class="roadmap-section-label">Features</div>
+                  <div class="roadmap-features">
+                    <div class="roadmap-feature">Silent meeting participation</div>
+                    <div class="roadmap-feature">Email and Slack monitoring</div>
+                    <div class="roadmap-feature">Pre-meeting briefing alert (10 min)</div>
+                    <div class="roadmap-feature">Briefing content: summary, actions, commitments</div>
+                    <div class="roadmap-feature">Data privacy controls</div>
+                  </div>
+                  <div class="roadmap-section-label">Outcome for Priya</div>
+                  <div class="roadmap-outcome">
+                    <p>Priya receives an accurate briefing 10 minutes before every recurring stakeholder meeting — without manual prep.</p>
+                  </div>
+                  <div class="roadmap-section-label">Why this horizon</div>
+                  <div class="roadmap-why">
+                    <p>These five features are the minimum viable product. Without any one of them, Priya cannot receive a trustworthy briefing. Data privacy controls are included in Now because their absence is an adoption blocker.</p>
+                  </div>
+                </div>
+
+                <!-- NEXT -->
+                <div class="roadmap-col">
+                  <div class="roadmap-col-header next">
+                    <div class="horizon">Next &nbsp;·&nbsp; Post-MVP</div>
+                    <div class="theme">Richer Context</div>
+                    <div class="timing">3–6 months</div>
+                  </div>
+                  <div class="roadmap-section-label">Features</div>
+                  <div class="roadmap-features">
+                    <div class="roadmap-feature">Relationship tone and sentiment tracking</div>
+                    <div class="roadmap-feature">On-demand briefing</div>
+                  </div>
+                  <div class="roadmap-section-label">Outcome for Priya</div>
+                  <div class="roadmap-outcome">
+                    <p>Priya's briefing becomes deeper — she understands the tone of the previous meeting and can request specific context on demand, arriving not just prepared but calibrated.</p>
+                  </div>
+                  <div class="roadmap-section-label">Why this horizon</div>
+                  <div class="roadmap-why">
+                    <p>Tone and on-demand briefing add depth to the core value proven in Now. The proactive alert must demonstrate reliability before richer intelligence is layered on top.</p>
+                  </div>
+                </div>
+
+                <!-- LATER -->
+                <div class="roadmap-col">
+                  <div class="roadmap-col-header later">
+                    <div class="horizon">Later &nbsp;·&nbsp; Future</div>
+                    <div class="theme">Briefing on the Go</div>
+                    <div class="timing">6+ months</div>
+                  </div>
+                  <div class="roadmap-section-label">Features</div>
+                  <div class="roadmap-features">
+                    <div class="roadmap-feature">Mobile application (iOS and Android)</div>
+                  </div>
+                  <div class="roadmap-section-label">Outcome for Priya</div>
+                  <div class="roadmap-outcome">
+                    <p>Priya can access her briefing on the go when she does not have her laptop — removing the constraint of desktop-only access.</p>
+                  </div>
+                  <div class="roadmap-section-label">Why this horizon</div>
+                  <div class="roadmap-why">
+                    <p>Mobile access removes a real constraint but does not change what the product does. It depends on desktop adoption proving value first.</p>
+                  </div>
+                </div>
+
+              </div>
+              <div class="roadmap-oos">
+                <div class="roadmap-oos-label">Out of scope — not on this roadmap</div>
+                <p>Microsoft 365 integration and Enterprise Admin Dashboard are explicitly excluded from all three horizons. They will only be revisited if individual adoption and enterprise demand warrant it. Documented in full in PRD Section 6.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-trigger" onclick="toggle(this)">
+            Non-functional requirements
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-content">
+            <p style="font-size:0.85rem; color:var(--ink-muted); line-height:1.7; margin-bottom:1rem;">NFRs define the quality standards BriefBack must meet. These are not features — they describe how well the system must perform for the product to be trusted and adopted.</p>
+            <div class="highlight-block teal" style="margin-bottom:0.6rem;">
+              <strong>NFR 1 — Security and Authorisation:</strong> The system must obtain explicit OAuth permissions from Zoom, Slack, and Gmail to access meeting transcripts, messages, and email threads. All data must be encrypted at rest and in transit using AES-256 standard. Users must retain the right to revoke access and delete all stored data within 24 hours of requesting deletion.
+            </div>
+            <div class="highlight-block teal" style="margin-bottom:0.6rem;">
+              <strong>NFR 2 — Bot Reliability and Availability:</strong> The bot must successfully join 95% of scheduled recurring stakeholder meetings, and must notify the PM within 2 minutes if it fails to join — so the PM is not left without context unknowingly.
+            </div>
+            <div class="highlight-block teal">
+              <strong>NFR 3 — AI Output Accuracy:</strong> The AI-generated briefing must achieve a minimum accuracy rate of 85% on commitments, action items, and meeting summaries — measured through monthly user feedback ratings. The system must flag low-confidence outputs to the PM rather than presenting uncertain content as fact.
+            </div>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-trigger" onclick="toggle(this)">
+            Technical assumptions
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-content">
+            <p style="font-size:0.85rem; color:var(--ink-muted); line-height:1.7; margin-bottom:1rem;">These assumptions underpin the PRD. If any is found to be incorrect during engineering review, the impacted sections must be revisited before build begins.</p>
+            <div class="moscow-grid">
+              <div class="moscow-item" style="align-items:flex-start;">
+                <span class="moscow-pill pill-m" style="margin-top:2px;">1</span>
+                <div>OAuth permissions can be obtained for API access across Zoom, Slack, Gmail, and Google Calendar.</div>
+              </div>
+              <div class="moscow-item" style="align-items:flex-start;">
+                <span class="moscow-pill pill-m" style="margin-top:2px;">2</span>
+                <div>A suitable AI model exists that can accurately extract meeting summaries, commitments, tone, and context from unstructured meeting data, email threads, and Slack messages.</div>
+              </div>
+              <div class="moscow-item" style="align-items:flex-start;">
+                <span class="moscow-pill pill-m" style="margin-top:2px;">3</span>
+                <div>The engineering team can build or procure encrypted data storage that meets AES-256 standard.</div>
+              </div>
+              <div class="moscow-item" style="align-items:flex-start;">
+                <span class="moscow-pill pill-m" style="margin-top:2px;">4</span>
+                <div>PMs can grant authorisation access to BriefBack without requiring full IT approval at an individual level.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-trigger" onclick="toggle(this)">
+            Risks and open questions
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-content">
+            <p style="font-size:0.78rem; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:0.75rem;">Key Risks</p>
+            <div class="highlight-block" style="margin-bottom:0.6rem;">
+              <strong>R1 — Data Privacy and Security:</strong> BriefBack accesses meeting recordings, emails, and calendar data. A breach would damage trust, create legal liability, and likely end the product. Mitigation: end-to-end encryption, clear data retention policies, and user-controlled deletion must ship at MVP.
+            </div>
+            <div class="highlight-block">
+              <strong>R2 — Enterprise IT Approval:</strong> Individual PMs may want BriefBack but IT policies may block third-party tools accessing email and calendar data. Mitigation: build data privacy controls into MVP and prepare enterprise security documentation early in the GTM process.
+            </div>
+            <p style="font-size:0.78rem; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-faint); margin:1.25rem 0 0.75rem;">Open Questions</p>
+            <ul style="padding-left:1.25rem; color:var(--ink-muted); font-size:0.88rem; line-height:2.2;">
+              <li>What AI model and data pipeline architecture is required to accurately extract commitments and relationship tone from unstructured meeting data?</li>
+              <li>Will BriefBack's differentiation on proactive relationship intelligence sustain adoption against Copilot, Otter.ai, and Google Workspace AI?</li>
+              <li>Do Zoom, Slack, Gmail, and Google Calendar API policies permit the level of data access BriefBack requires at scale?</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+  <!-- CASE STUDY 2 -->
   <div class="case-card" id="appia">
     <div class="case-card-header">
       <div>
         <div>
-          <span class="case-tag tag-appia">Case Study 1</span>
+          <span class="case-tag tag-appia">Case Study 2</span>
           <span class="case-tag tag-type">Process Automation · FinTech</span>
         </div>
         <h2>APPIA Key Provisioning<br>Automation</h2>
@@ -179,7 +537,6 @@
       </div>
 
       <div class="accordion">
-
         <div class="acc-item">
           <button class="acc-trigger" onclick="toggle(this)">
             Discovery — how the problem was confirmed
@@ -272,171 +629,11 @@
             <p style="margin-top:0.75rem;">If I ran this again: after leadership alignment, one all-hands session with every participant — not just senior members. One message, one room, one moment of shared understanding. Automation projects fail at the edges, and the edges are usually the people who were not in the original room.</p>
           </div>
         </div>
-
       </div>
     </div>
   </div>
 
-  <!-- CASE STUDY 2 -->
-  <div class="case-card" id="briefback">
-    <div class="case-card-header">
-      <div>
-        <div>
-          <span class="case-tag tag-briefback">Case Study 2</span>
-          <span class="case-tag tag-type">Zero-to-One Product · AI</span>
-        </div>
-        <h2>BriefBack — AI-Powered<br>Meeting Intelligence</h2>
-        <p class="subtitle">Full PRD &nbsp;·&nbsp; Personal Product Work &nbsp;·&nbsp; May 2026</p>
-      </div>
-      <span class="case-badge">PRD v1.0 &nbsp;·&nbsp; MVP</span>
-    </div>
 
-    <div class="metrics-row">
-      <div class="metric-cell">
-        <span class="metric-num">2–3 hrs</span>
-        <span class="metric-label">→ under 10 min pre-meeting prep</span>
-      </div>
-      <div class="metric-cell">
-        <span class="metric-num">65%</span>
-        <span class="metric-label">briefing open rate target by month 6</span>
-      </div>
-      <div class="metric-cell">
-        <span class="metric-num">70%</span>
-        <span class="metric-label">retention at 6 months (weekly active)</span>
-      </div>
-      <div class="metric-cell">
-        <span class="metric-num">5</span>
-        <span class="metric-label">Must-have features scoped for MVP</span>
-      </div>
-    </div>
-
-    <div class="case-body">
-      <div class="case-section">
-        <div class="case-section-title">Problem</div>
-        <p>Product Managers at mid-size, high-growth tech companies attend multiple recurring stakeholder meetings daily. Without a reliable system to track what was decided, left open, and promised in each relationship, PMs walk in without context. Conversations repeat. Commitments are missed. Stakeholder trust erodes. Current tools require manual input, are reactive, or are locked to a single enterprise stack. No tool today silently builds a living memory of PM stakeholder relationships and surfaces context automatically — before the meeting begins.</p>
-      </div>
-      <div class="case-section">
-        <div class="case-section-title">My Role</div>
-        <p>Full product ownership — from problem framing and competitive analysis through persona definition, success metrics, user story writing, MoSCoW prioritisation, and risk documentation. This is original zero-to-one product work built as part of my PM transition portfolio. No existing product to inherit — problem first, solution second.</p>
-      </div>
-
-      <div class="accordion">
-
-        <div class="acc-item">
-          <button class="acc-trigger" onclick="toggle(this)">
-            User personas — who this is built for
-            <span class="acc-icon">+</span>
-          </button>
-          <div class="acc-content">
-            <div class="persona-grid">
-              <div class="persona-card">
-                <div class="persona-name">Priya — Primary User</div>
-                <div class="persona-role">Product Manager · 3–6 yrs · Mid-size tech (50–500 employees)</div>
-                <div class="persona-row">
-                  <span>Core pain</span>
-                  Spends 2–3 hrs the night before each stakeholder sync piecing together what was decided. Still walks in with gaps.
-                </div>
-                <div class="persona-row">
-                  <span>Stack</span>
-                  Zoom, Slack, Gmail, Google Calendar — no enterprise AI coverage
-                </div>
-                <div class="persona-row">
-                  <span>Adoption barrier</span>
-                  Company IT policy may restrict third-party tools accessing calendar, email, and meeting recordings
-                </div>
-              </div>
-              <div class="persona-card">
-                <div class="persona-name">Arjun — Enterprise Buyer</div>
-                <div class="persona-role">VP of Product · 10+ yrs · Approver, not daily user</div>
-                <div class="persona-row">
-                  <span>Role in purchase</span>
-                  Does not use BriefBack daily. Approves it. Decides whether it goes on the IT-approved tools list.
-                </div>
-                <div class="persona-row">
-                  <span>Key question</span>
-                  Can I trust this with my team's calendar and email data?
-                </div>
-                <div class="persona-row">
-                  <span>GTM model</span>
-                  Bottom-up. Priya loves it, advocates for it. Arjun buys what Priya brings to him.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="acc-item">
-          <button class="acc-trigger" onclick="toggle(this)">
-            User story and acceptance criteria
-            <span class="acc-icon">+</span>
-          </button>
-          <div class="acc-content">
-            <div class="highlight-block teal">
-              <strong>User Story:</strong> As a Product Manager, I want to receive a proactive briefing 10 minutes before a recurring stakeholder meeting, so that I can walk in prepared without spending time on manual prep.
-            </div>
-            <p style="margin-top:1.25rem; font-size:0.78rem; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-faint);">Acceptance Criteria</p>
-            <div style="display:grid; gap:0.6rem; margin-top:0.6rem;">
-              <div class="highlight-block" style="border-left-color:var(--border-strong); margin:0;">
-                <strong>AC1 — Trigger:</strong> Given a recurring stakeholder meeting exists, when it is 10 minutes prior, then the product triggers and delivers an alert to the PM.
-              </div>
-              <div class="highlight-block" style="border-left-color:var(--border-strong); margin:0;">
-                <strong>AC2 — Content:</strong> Given an alert has been raised, when the briefing is generated, then it must contain the previous meeting summary, open action items, commitments made, and relationship tone — specific to that meeting.
-              </div>
-              <div class="highlight-block" style="border-left-color:var(--border-strong); margin:0;">
-                <strong>AC3 — Load state:</strong> Given the alert has been delivered and when the tool is clicked, then the briefing is ready and displays the full content accurately.
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="acc-item">
-          <button class="acc-trigger" onclick="toggle(this)">
-            Feature prioritisation — MoSCoW
-            <span class="acc-icon">+</span>
-          </button>
-          <div class="acc-content">
-            <div class="moscow-grid">
-              <div class="moscow-item"><span class="moscow-pill pill-m">M</span><div>Silent meeting participation<div class="moscow-reason">Primary data source — MVP cannot function without it</div></div></div>
-              <div class="moscow-item"><span class="moscow-pill pill-m">M</span><div>Email and Slack monitoring<div class="moscow-reason">Secondary data source — commitments outside meetings must be captured</div></div></div>
-              <div class="moscow-item"><span class="moscow-pill pill-m">M</span><div>Pre-meeting briefing alert<div class="moscow-reason">Core delivery mechanism — the reason BriefBack exists</div></div></div>
-              <div class="moscow-item"><span class="moscow-pill pill-m">M</span><div>Briefing content (summary, actions, commitments)<div class="moscow-reason">The actual value the PM receives — without this there is no MVP</div></div></div>
-              <div class="moscow-item"><span class="moscow-pill pill-m">M</span><div>Data privacy controls<div class="moscow-reason">Primary adoption blocker — Priya cannot trust the product without this</div></div></div>
-              <div class="moscow-item"><span class="moscow-pill pill-s">S</span><div>Relationship tone and sentiment tracking<div class="moscow-reason">Adds depth to briefing — core value works without it in v1</div></div></div>
-              <div class="moscow-item"><span class="moscow-pill pill-s">S</span><div>On-demand briefing<div class="moscow-reason">Proactive alert must prove itself first before building reactive access</div></div></div>
-              <div class="moscow-item"><span class="moscow-pill pill-c">C</span><div>Mobile app<div class="moscow-reason">Dependent on desktop adoption success</div></div></div>
-              <div class="moscow-item"><span class="moscow-pill pill-w">W</span><div>Enterprise admin dashboard<div class="moscow-reason">Out of scope — enterprise GTM follows individual adoption</div></div></div>
-              <div class="moscow-item"><span class="moscow-pill pill-w">W</span><div>Microsoft 365 integration<div class="moscow-reason">Primary user on Zoom / Slack / Gmail stack only at MVP</div></div></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="acc-item">
-          <button class="acc-trigger" onclick="toggle(this)">
-            Risks and open questions
-            <span class="acc-icon">+</span>
-          </button>
-          <div class="acc-content">
-            <p style="font-size:0.78rem; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:0.75rem;">Key Risks</p>
-            <div class="highlight-block" style="margin-bottom:0.6rem;">
-              <strong>R1 — Data Privacy and Security:</strong> BriefBack accesses meeting recordings, emails, and calendar data. A breach would damage trust, create legal liability, and likely end the product. Mitigation: end-to-end encryption, clear data retention policies, and user-controlled deletion must ship at MVP.
-            </div>
-            <div class="highlight-block">
-              <strong>R2 — Enterprise IT Approval:</strong> Individual PMs may want BriefBack but IT policies may block third-party tools accessing email and calendar data. Mitigation: build data privacy controls into MVP and prepare enterprise security documentation early in the GTM process.
-            </div>
-            <p style="font-size:0.78rem; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-faint); margin:1.25rem 0 0.75rem;">Open Questions</p>
-            <ul style="padding-left:1.25rem; color:var(--ink-muted); font-size:0.88rem; line-height:2.2;">
-              <li>What AI model and data pipeline architecture is required to accurately extract commitments and relationship tone from unstructured meeting data?</li>
-              <li>Will BriefBack's differentiation on proactive relationship intelligence sustain adoption against Copilot, Otter.ai, and Google Workspace AI?</li>
-              <li>Do Zoom, Slack, Gmail, and Google Calendar API policies permit the level of data access BriefBack requires at scale?</li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-</div>
 
 <div class="about-section" id="about">
   <div class="about-inner">
