@@ -113,6 +113,61 @@
   .roadmap-oos-label { font-size: 0.66rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 0.35rem; }
   .roadmap-oos p { font-size: 0.8rem; color: var(--ink-faint); line-height: 1.6; }
 
+  .wf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 0.75rem; }
+  .wf-device { background: var(--surface-raised); border-radius: 10px; padding: 12px; }
+  .wf-screen { background: #fff; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; font-size: 0.78rem; }
+  .wf-topbar { background: var(--surface-raised); border-bottom: 1px solid var(--border); padding: 8px 12px; display: flex; align-items: center; justify-content: space-between; }
+  .wf-topbar-title { font-size: 0.7rem; font-weight: 500; color: var(--ink-muted); }
+  .wf-dots { display: flex; gap: 4px; }
+  .wf-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--border-strong); }
+  .wf-body { padding: 12px; }
+  .wf-badge { display: inline-block; font-size: 0.62rem; font-weight: 500; padding: 2px 7px; border-radius: 3px; margin-bottom: 8px; }
+  .wf-badge-alert { background: #FEF3C7; color: #92400E; }
+  .wf-badge-briefing { background: #DBEAFE; color: #1E40AF; }
+  .wf-badge-privacy { background: #FEE2E2; color: #991B1B; }
+  .wf-alert-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px; }
+  .wf-alert-title { font-size: 0.78rem; font-weight: 500; color: var(--ink); }
+  .wf-alert-time { font-size: 0.68rem; color: var(--ink-faint); }
+  .wf-alert-sub { font-size: 0.68rem; color: var(--ink-muted); margin-bottom: 10px; }
+  .wf-field { border: 1px solid var(--border); border-radius: 5px; padding: 6px 8px; margin-bottom: 5px; }
+  .wf-field.commitment { border-left: 2px solid #D97706; }
+  .wf-field-label { font-size: 0.6rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-faint); margin-bottom: 2px; }
+  .wf-field-value { font-size: 0.7rem; color: var(--ink); line-height: 1.4; }
+  .wf-field-value.commitment-text { color: #B45309; font-weight: 500; }
+  .wf-ph { background: var(--surface-raised); border-radius: 2px; height: 9px; display: block; margin-bottom: 3px; }
+  .wf-actions { display: flex; gap: 6px; margin-top: 10px; }
+  .wf-btn-p { flex: 1; font-size: 0.68rem; font-weight: 500; padding: 6px 0; border-radius: 5px; background: #DBEAFE; color: #1E40AF; border: none; text-align: center; }
+  .wf-btn-s { flex: 1; font-size: 0.68rem; padding: 6px 0; border-radius: 5px; background: var(--surface-raised); color: var(--ink-muted); border: 1px solid var(--border); text-align: center; }
+  .wf-section-head { font-size: 0.62rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-faint); padding: 8px 12px 4px; border-top: 1px solid var(--border); }
+  .wf-expand { border-bottom: 1px solid var(--border); padding: 8px 12px; }
+  .wf-expand-label { font-size: 0.62rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-faint); display: flex; justify-content: space-between; margin-bottom: 4px; }
+  .wf-expand-label.commitment-label { color: #B45309; }
+  .wf-expand.commitment-expand { border-left: 2px solid #D97706; }
+  .wf-signals { padding: 8px 12px; display: flex; flex-direction: column; gap: 4px; }
+  .wf-chip { font-size: 0.62rem; padding: 2px 7px; border-radius: 20px; border: 1px solid var(--border); color: var(--ink-muted); display: inline-block; }
+  .wf-briefing-nav { padding: 8px 12px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+  .wf-briefing-nav-title { font-size: 0.75rem; font-weight: 500; color: var(--ink); }
+  .wf-briefing-nav-sub { font-size: 0.65rem; color: var(--ink-faint); }
+  .wf-privacy-row { display: flex; align-items: center; gap: 8px; padding: 7px 12px; border-bottom: 1px solid var(--border); }
+  .wf-privacy-icon { width: 24px; height: 24px; border-radius: 4px; background: var(--surface-raised); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.7rem; color: var(--ink-muted); }
+  .wf-privacy-info { flex: 1; }
+  .wf-privacy-name { font-size: 0.7rem; font-weight: 500; color: var(--ink); }
+  .wf-privacy-meta { font-size: 0.62rem; color: var(--ink-faint); }
+  .wf-privacy-delete { font-size: 0.62rem; color: var(--accent); padding: 3px 7px; border: 1px solid rgba(200,75,47,0.25); border-radius: 4px; flex-shrink: 0; }
+  .wf-delete-all { margin: 8px 12px 10px; background: #FEE2E2; border-radius: 5px; padding: 8px 10px; }
+  .wf-delete-all-title { font-size: 0.68rem; font-weight: 500; color: #991B1B; margin-bottom: 2px; }
+  .wf-delete-all-desc { font-size: 0.62rem; color: #B91C1C; line-height: 1.4; }
+  .wf-annots { display: flex; flex-direction: column; gap: 10px; }
+  .wf-annot { display: flex; gap: 8px; align-items: flex-start; }
+  .wf-annot-num { width: 16px; height: 16px; border-radius: 50%; background: var(--surface-raised); border: 1px solid var(--border); font-size: 0.6rem; font-weight: 500; color: var(--ink-muted); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  .wf-annot-text { font-size: 0.8rem; color: var(--ink-muted); line-height: 1.55; }
+  .wf-annot-text strong { color: var(--ink); font-weight: 500; }
+  .wf-screen-intro { margin-bottom: 1rem; }
+  .wf-screen-intro-title { font-size: 0.72rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); margin-bottom: 0.2rem; }
+  .wf-screen-intro-desc { font-size: 0.85rem; color: var(--ink-muted); line-height: 1.6; }
+  .wf-separator { border: none; border-top: 1px solid var(--border); margin: 1.5rem 0; }
+  @media (max-width: 640px) { .wf-grid { grid-template-columns: 1fr; } }
+
   .about-section { background: var(--ink); color: #faf9f6; padding: 5rem 2rem; }
   .about-inner { max-width: 860px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
   .about-inner h2 { font-family: var(--serif); font-size: 2.2rem; color: #faf9f6; line-height: 1.2; letter-spacing: -0.015em; }
@@ -460,6 +515,99 @@
               <div class="moscow-item" style="align-items:flex-start;">
                 <span class="moscow-pill pill-m" style="margin-top:2px;">4</span>
                 <div>PMs can grant authorisation access to BriefBack without requiring full IT approval at an individual level.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-trigger" onclick="toggle(this)">
+            Wireframes — three key screens
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-content">
+            <p style="font-size:0.85rem; color:var(--ink-muted); line-height:1.7; margin-bottom:1.25rem;">Low-fidelity wireframes for the three MVP screens. Each screen maps directly to a Must Have feature in the MoSCoW table. Structure and hierarchy shown — not final design.</p>
+
+            <div class="wf-screen-intro">
+              <div class="wf-screen-intro-title">Screen 1 of 3 &nbsp;·&nbsp; Pre-meeting alert card</div>
+              <div class="wf-screen-intro-desc">Fires 10 minutes before a recurring stakeholder meeting. Scannable in under 60 seconds. One tap opens the full briefing.</div>
+            </div>
+            <div class="wf-grid">
+              <div class="wf-device">
+                <div class="wf-screen">
+                  <div class="wf-topbar"><div class="wf-dots"><div class="wf-dot"></div><div class="wf-dot"></div><div class="wf-dot"></div></div><div class="wf-topbar-title">BriefBack</div><div style="width:32px"></div></div>
+                  <div class="wf-body">
+                    <span class="wf-badge wf-badge-alert">⏰ 10 min before meeting</span>
+                    <div class="wf-alert-header"><div class="wf-alert-title">Engineering sync — Ravi</div><div class="wf-alert-time">2:50 PM</div></div>
+                    <div class="wf-alert-sub">Recurring · Weekly · 3:00 PM</div>
+                    <div class="wf-field"><div class="wf-field-label">Meeting context</div><div class="wf-field-value">PRD v1.0 review with engineering lead</div></div>
+                    <div class="wf-field"><div class="wf-field-label">Key decisions</div><div class="wf-field-value">Product agreed to add NFRs and 2 more use cases before next review</div></div>
+                    <div class="wf-field"><div class="wf-field-label">Open items</div><div class="wf-field-value">Architecture for data pipeline not yet agreed</div></div>
+                    <div class="wf-field commitment"><div class="wf-field-label">Your commitments</div><div class="wf-field-value commitment-text">PRD v1.1 to be shared before this meeting</div></div>
+                    <div class="wf-actions"><div class="wf-btn-p">Open full briefing</div><div class="wf-btn-s">Dismiss</div></div>
+                  </div>
+                </div>
+              </div>
+              <div class="wf-annots">
+                <div class="wf-annot"><div class="wf-annot-num">1</div><div class="wf-annot-text"><strong>Alert fires at T−10.</strong> Triggered by calendar integration when a recurring meeting is detected.</div></div>
+                <div class="wf-annot"><div class="wf-annot-num">2</div><div class="wf-annot-text"><strong>Four fixed fields.</strong> Meeting context, Key decisions, Open items, Your commitments — same structure every time so Priya knows where to look.</div></div>
+                <div class="wf-annot"><div class="wf-annot-num">3</div><div class="wf-annot-text"><strong>Commitments highlighted in amber.</strong> Priya's biggest fear is missing a promise. This surfaces front and centre.</div></div>
+                <div class="wf-annot"><div class="wf-annot-num">4</div><div class="wf-annot-text"><strong>One primary action.</strong> Open full briefing. Dismiss is secondary — intentionally deprioritised.</div></div>
+              </div>
+            </div>
+
+            <hr class="wf-separator">
+
+            <div class="wf-screen-intro">
+              <div class="wf-screen-intro-title">Screen 2 of 3 &nbsp;·&nbsp; Full briefing view</div>
+              <div class="wf-screen-intro-desc">Opens when Priya taps the alert. Expands each field with full context. Surfaces signals from Slack and email since the last meeting.</div>
+            </div>
+            <div class="wf-grid">
+              <div class="wf-device">
+                <div class="wf-screen">
+                  <div class="wf-topbar"><div class="wf-dots"><div class="wf-dot"></div><div class="wf-dot"></div><div class="wf-dot"></div></div><div class="wf-topbar-title">BriefBack</div><div style="width:32px"></div></div>
+                  <div class="wf-briefing-nav"><div><div class="wf-briefing-nav-title">Engineering sync — Ravi</div><div class="wf-briefing-nav-sub">Full briefing · Last meeting: June 2</div></div><span class="wf-badge wf-badge-briefing">PRD v1.1</span></div>
+                  <div class="wf-expand"><div class="wf-expand-label">Meeting context <span>▾</span></div><span class="wf-ph" style="width:90%"></span><span class="wf-ph" style="width:75%"></span><span class="wf-ph" style="width:80%"></span></div>
+                  <div class="wf-expand"><div class="wf-expand-label">Key decisions <span>▾</span></div><span class="wf-ph" style="width:90%"></span><span class="wf-ph" style="width:55%"></span></div>
+                  <div class="wf-expand"><div class="wf-expand-label">Open items <span>▾</span></div><span class="wf-ph" style="width:75%"></span><span class="wf-ph" style="width:80%"></span></div>
+                  <div class="wf-expand commitment-expand"><div class="wf-expand-label commitment-label">Your commitments <span>▾</span></div><span class="wf-ph" style="width:90%"></span><span class="wf-ph" style="width:60%"></span></div>
+                  <div class="wf-section-head">Signals since last meeting</div>
+                  <div class="wf-signals"><span class="wf-chip">💬 2 Slack messages from Ravi</span><span class="wf-chip">✉️ 1 email thread — PRD feedback</span></div>
+                </div>
+              </div>
+              <div class="wf-annots">
+                <div class="wf-annot"><div class="wf-annot-num">1</div><div class="wf-annot-text"><strong>Same four fields, expanded.</strong> Each field from the alert shows full context — not just the headline.</div></div>
+                <div class="wf-annot"><div class="wf-annot-num">2</div><div class="wf-annot-text"><strong>Fields are collapsible.</strong> Priya opens only what she needs. Default: all expanded.</div></div>
+                <div class="wf-annot"><div class="wf-annot-num">3</div><div class="wf-annot-text"><strong>Commitments accented.</strong> Amber left border — always visible even when collapsed.</div></div>
+                <div class="wf-annot"><div class="wf-annot-num">4</div><div class="wf-annot-text"><strong>Signals section.</strong> Relevant Slack and email context since the last meeting. No manual searching required.</div></div>
+              </div>
+            </div>
+
+            <hr class="wf-separator">
+
+            <div class="wf-screen-intro">
+              <div class="wf-screen-intro-title">Screen 3 of 3 &nbsp;·&nbsp; Data privacy screen</div>
+              <div class="wf-screen-intro-desc">Accessible from settings. Shows exactly what BriefBack has stored, organised by data type. Priya can delete any item at any time — this is the trust layer.</div>
+            </div>
+            <div class="wf-grid">
+              <div class="wf-device">
+                <div class="wf-screen">
+                  <div class="wf-topbar"><div class="wf-dots"><div class="wf-dot"></div><div class="wf-dot"></div><div class="wf-dot"></div></div><div class="wf-topbar-title">Data &amp; privacy</div><div style="width:32px"></div></div>
+                  <div class="wf-section-head" style="border-top:none;padding-top:10px;">Meeting recordings</div>
+                  <div class="wf-privacy-row"><div class="wf-privacy-icon">▶</div><div class="wf-privacy-info"><div class="wf-privacy-name">Engineering sync — June 2</div><div class="wf-privacy-meta">Transcript · 47 min · Ravi</div></div><div class="wf-privacy-delete">Delete</div></div>
+                  <div class="wf-privacy-row"><div class="wf-privacy-icon">▶</div><div class="wf-privacy-info"><div class="wf-privacy-name">Leadership sync — May 28</div><div class="wf-privacy-meta">Transcript · 32 min · Arjun</div></div><div class="wf-privacy-delete">Delete</div></div>
+                  <div class="wf-section-head">Email threads</div>
+                  <div class="wf-privacy-row"><div class="wf-privacy-icon">✉</div><div class="wf-privacy-info"><div class="wf-privacy-name">PRD v1.1 feedback thread</div><div class="wf-privacy-meta">Gmail · 4 messages · June 3</div></div><div class="wf-privacy-delete">Delete</div></div>
+                  <div class="wf-section-head">Slack messages</div>
+                  <div class="wf-privacy-row"><div class="wf-privacy-icon">#</div><div class="wf-privacy-info"><div class="wf-privacy-name">#product-engineering</div><div class="wf-privacy-meta">12 messages · June 1–4</div></div><div class="wf-privacy-delete">Delete</div></div>
+                  <div class="wf-delete-all"><div class="wf-delete-all-title">Delete all stored data</div><div class="wf-delete-all-desc">Permanently removes all recordings, emails, and Slack data. This cannot be undone.</div></div>
+                </div>
+              </div>
+              <div class="wf-annots">
+                <div class="wf-annot"><div class="wf-annot-num">1</div><div class="wf-annot-text"><strong>Three data categories.</strong> Meeting recordings, Email threads, Slack messages — matching exactly what BriefBack accesses per the PRD.</div></div>
+                <div class="wf-annot"><div class="wf-annot-num">2</div><div class="wf-annot-text"><strong>Per-item deletion.</strong> Priya can delete a single transcript without wiping everything. Granular control builds trust.</div></div>
+                <div class="wf-annot"><div class="wf-annot-num">3</div><div class="wf-annot-text"><strong>Delete all at the bottom.</strong> Destructive action is not the first thing Priya sees. Position is a deliberate design decision.</div></div>
+                <div class="wf-annot"><div class="wf-annot-num">4</div><div class="wf-annot-text"><strong>This is the trust layer.</strong> Without it, Priya cannot adopt BriefBack. MoSCoW: Must Have. Documented as an adoption blocker.</div></div>
               </div>
             </div>
           </div>
